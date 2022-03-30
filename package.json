@@ -2,15 +2,21 @@
   "name": "simple_percentile",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "server/server.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
     "express-validator": "^6.14.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.2"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "mocha --timeout 10000"
   }
 }

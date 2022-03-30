@@ -1,5 +1,6 @@
-const helper = require('./helper')
-const db = require('./db')
+const {query_status} = require('../error_status')
+const helper = require('../helper')
+const db = require('../db')
 
 exports.insert = (pool_id, data) => {
   if (db.exist(pool_id)) {
@@ -18,6 +19,6 @@ exports.get_percentile_value = (pool_id, p) => new Promise((resolve, reject) => 
 
     resolve({percentile_value, pool_size: pool.length})
   } else {
-    reject('NOT_EXIST')
+    reject(query_status.NOT_EXIST)
   }
 })

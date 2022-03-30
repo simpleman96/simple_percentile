@@ -1,0 +1,1 @@
+exports.query_status = {NOT_EXIST: 'NOT_EXIST'}

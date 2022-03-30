@@ -1,6 +1,10 @@
 exports.get_percentile_value = (in_list, p) => {
-  const p_idx = Math.round(p * in_list.length / 100) - 1
-  return in_list[p_idx]
+  if (p === 0)
+    return in_list[0]
+  else {
+    const p_idx = Math.ceil(p * in_list.length / 100) - 1
+    return in_list[p_idx]
+  }
 }
 
 exports.append_to_sorted_array = (array, value) => {
