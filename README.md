@@ -11,6 +11,7 @@ For more details, see documentation below.
 ## Installation
 **System requirements**
 - nodejs (includes npm) version >= v14.18.0
+
 **Installation command**
 - npm install
 
