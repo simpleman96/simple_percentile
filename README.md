@@ -9,7 +9,9 @@ A simple RESTful API app written by expressjs. The app provide 2 post endpoints:
 For more details, see documentation below.
 
 ## Installation
-
+**System requirements**
+- nodejs (includes npm) version >= v14.18.0
+**Installation command**
 - npm install
 
 ## Run
@@ -86,3 +88,5 @@ The detailed description of 2 apis:
 |-------------------|------------------------------------------|-------------------------------------------------------|
 |If exist poolId:   |`{"percentile_value": 7, "pool_size": 4}` | - `percentile_value` is the value of `percentile` threshold calculated on pool with `poolId`<br>- `pool_size` is size of pool with with `poolId`|
 |Error              |`{"error": (detail here)}`                |                                                       |
+
+_* The percentile value calculated by using "The nearest-rank method"_
