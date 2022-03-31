@@ -32,7 +32,7 @@ POST: http://localhost:3000/insert
 }`
 <br>
 <br>
-POST: http://localhost:3000/insert
+POST: http://localhost:3000/query
 <br>
 `{
 "poolId": 123546,
