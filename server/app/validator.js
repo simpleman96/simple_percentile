@@ -1,5 +1,10 @@
 const {body, validationResult} = require('express-validator')
 
+/*
+ * validate entity for insert api
+ * - check exist for poolId, poolValues
+ * - check array type for poolValues
+ */
 const insert_validator = () => {
   return [
     body('poolId').notEmpty().withMessage('Missing poolId field'),
@@ -8,6 +13,11 @@ const insert_validator = () => {
   ]
 }
 
+/*
+ * validate entity for query api
+ * - check exist for poolId, percentile
+ * - check value in range of [0.0, 100.0] for percentile
+ */
 const query_validator = () => {
   return [
     body('poolId').notEmpty().withMessage('Missing poolId field'),
@@ -16,6 +26,9 @@ const query_validator = () => {
   ]
 }
 
+/*
+ * wrap validator func and handle validator error as a middleware chain
+ */
 const validator_chain = (func) => {
   const handler = (req, res, next) => {
     const errors = validationResult(req)

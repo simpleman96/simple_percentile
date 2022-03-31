@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 const port = 3000
 
-// route
+// routes
 app.post('/insert', validator.insert_validator, controller.insert)
 app.post('/query', validator.query_validator, controller.query)
 

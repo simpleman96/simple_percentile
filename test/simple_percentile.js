@@ -7,10 +7,22 @@ const should = chai.should()
 
 chai.use(chaiHttp)
 
+const insert_call = (body, done) => {
+  chai.request(server)
+    .post('/insert')
+    .send(body)
+    .end((err, res) => {
+      res.should.have.status(200)
+      res.body.should.be.a('object')
+      res.body.should.have.property('message').eql("inserted")
+      done()
+    })
+}
+
 describe('Simple percentile', () => {
 
   /*
-   * all inserted api test
+   * ===================all insert api test===================
    */
   describe('/POST insert', () => {
     it('Should return missing poolId', (done) => {
@@ -86,15 +98,7 @@ describe('Simple percentile', () => {
           32,
           34]
       }
-      chai.request(server)
-        .post('/insert')
-        .send(body)
-        .end((err, res) => {
-          res.should.have.status(200)
-          res.body.should.be.a('object')
-          res.body.should.have.property('message').eql("inserted")
-          done()
-        })
+      insert_call(body, done)
     })
     it('Should return "inserted"', (done) => {
       let body = {
@@ -106,15 +110,7 @@ describe('Simple percentile', () => {
           6
         ]
       }
-      chai.request(server)
-        .post('/insert')
-        .send(body)
-        .end((err, res) => {
-          res.should.have.status(200)
-          res.body.should.be.a('object')
-          res.body.should.have.property('message').eql("inserted")
-          done()
-        })
+      insert_call(body, done)
     })
 
     it('Should return "appended"', (done) => {
@@ -140,7 +136,7 @@ describe('Simple percentile', () => {
   })
 
   /*
-   * all query api test
+   * ===================all query api test===================
    */
   describe('/POST query', () => {
     it('Should return NOT_EXIST', (done) => {
