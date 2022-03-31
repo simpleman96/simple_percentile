@@ -86,7 +86,7 @@ The detailed description of 2 apis:
 
 |Case               | Output                                   | Description                                           |
 |-------------------|------------------------------------------|-------------------------------------------------------|
-|If exist poolId:   |`{"percentile_value": 7, "pool_size": 4}` | - `percentile_value` is the value of `percentile` threshold calculated on pool with `poolId`<br>- `pool_size` is size of pool with with `poolId`|
+|If exist poolId:   |`{"percentile_value": 7, "pool_size": 4}` | - `percentile_value` is the value of `percentile` threshold calculated on pool with the `poolId`<br>- `pool_size` is size of pool with the `poolId`|
 |Error              |`{"error": (detail here)}`                |                                                       |
 
 _* The percentile value calculated by using "The nearest-rank method"_
